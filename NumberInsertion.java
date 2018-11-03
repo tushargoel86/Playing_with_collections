@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class InsertNumber {
+public class NumberInsertion {
 
 	public static void main(String[] args) {
 		List<Integer> numbers = new ArrayList<>();
@@ -18,23 +18,16 @@ public class InsertNumber {
 		numbers.add(90);
 		numbers.add(100);
 		
-		//method 1
-		//negative: we need to iterate complete list to find the position
 		usingLinearSearch(numbers);
 		System.out.println(numbers);
 		
-		//method2
-		//positive: easy to search find the location in less comparison
-		//negative: it returns negative index if that number is not found.
-		//			we need to take care that
+		
 		usingBinarySearch(numbers);
 		System.out.println(numbers);
 	}
 
 	private static void usingBinarySearch(List<Integer> numbers) {
-		//return the index where we need to add the element
 		int index = Collections.binarySearch(numbers, 55);
-		//return index is negative
 		numbers.add(-index-1, 55);
 	}
 
